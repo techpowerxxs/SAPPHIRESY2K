@@ -1,0 +1,26 @@
+body.glitch-bg {
+  background-color: black;
+  background-image: url('glitch_bg.gif'); /* Optional */
+  background-size: cover;
+  color: lime;
+  font-family: 'Courier New', Courier, monospace;
+  padding: 2em;
+}
+.glitch-window {
+  border: 2px solid magenta;
+  padding: 1em;
+  background: rgba(0, 0, 0, 0.7);
+}
+.glitch-text {
+  animation: glitch 1s infinite;
+  color: #ff00ff;
+  text-shadow: 2px 2px 0 lime, -2px -2px 0 cyan;
+}
+@keyframes glitch {
+  0% { transform: translate(0); }
+  20% { transform: translate(-2px, 2px); }
+  40% { transform: translate(2px, -2px); }
+  60% { transform: translate(-1px, 1px); }
+  80% { transform: translate(1px, -1px); }
+  100% { transform: translate(0); }
+}

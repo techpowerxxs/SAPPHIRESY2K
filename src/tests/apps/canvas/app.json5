@@ -1,0 +1,6 @@
+{
+  name: 'CANVAS',
+  icon: 'apps/canvas/assets/yea.png',
+  run: 'apps/canvas/app.js',
+  background: true,
+}

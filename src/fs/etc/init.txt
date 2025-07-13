@@ -1,0 +1,2 @@
+echo "Booting custom Sys42..."
+open fs/w93/index.html

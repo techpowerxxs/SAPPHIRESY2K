@@ -1,0 +1,45 @@
+body {
+  background: black;
+  color: lime;
+  font-family: 'Press Start 2P', monospace;
+  image-rendering: pixelated;
+}
+
+#splash {
+  font-size: 0.9rem;
+  padding: 2rem;
+  color: #fff;
+  background: black;
+  text-align: left;
+}
+
+#desktop {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 2rem;
+  background: url('../icons/w93-wallpaper.png');
+}
+
+.icon img {
+  width: 48px;
+}
+
+.icon p {
+  color: white;
+  text-align: center;
+  font-size: 0.7rem;
+  margin: 0.5rem 0 0;
+}
+
+.window {
+  position: fixed;
+  top: 60px;
+  left: 80px;
+  width: 500px;
+  height: 400px;
+  background: #111;
+  border: 2px ridge #ccc;
+  z-index: 1000;
+}
+

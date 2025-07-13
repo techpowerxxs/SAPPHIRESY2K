@@ -1,0 +1,114 @@
+<?xml version="1.0"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+
+    <!--
+    http://electricbeach.org/?p=950
+    http://codepen.io/awgreenblatt/pen/Kdsfr
+    -->
+
+    <filter id='ef_grayscale'>
+      <feColorMatrix type="saturate" values="0"/>
+    </filter>
+
+    <filter id='ef_invert'>
+      <feComponentTransfer>
+        <feFuncR type='linear' slope='-1' intercept='1'/>
+        <feFuncG type='linear' slope='-1' intercept='1' />
+        <feFuncB type='linear' slope='-1' intercept='1' />
+      </feComponentTransfer>
+    </filter>
+
+    <filter id='ef_invert_light'>
+      <feColorMatrix in='SourceGraphic' type='hueRotate' values='180' />
+      <feComponentTransfer>
+        <feFuncR type='linear' slope='-1' intercept='1'/>
+        <feFuncG type='linear' slope='-1' intercept='1' />
+        <feFuncB type='linear' slope='-1' intercept='1' />
+      </feComponentTransfer>
+    </filter>
+
+    <filter id='ef_acid'>
+      <feColorMatrix type='hueRotate' values='180'>
+        <animate attributeName='values' attributeType='XML' begin='0s' dur='3s' repeatCount='indefinite' from='0' to='360'/>
+      </feColorMatrix>
+    </filter>
+
+    <filter id="ef_zombi" x="0%" y="0%" width="100%" height="100%">
+      <feFlood flood-color="#c3ff00" result="A" />
+      <feColorMatrix type="matrix" in="SourceGraphic" result="B"
+        values=" 1 0 0 0 0
+                 0 0 0 0 0
+                 0 1 1 0 0
+                 1 1 1 0 0" />
+      <feMerge>
+        <feMergeNode in="A" />
+        <feMergeNode in="B" />
+      </feMerge>
+    </filter>
+
+    <filter id="ef_sepiablue" x="0%" y="0%" width="100%" height="100%">
+      <feColorMatrix type="matrix" values="0.2126 0.7152 0.0722 0 0 0.2126 0.7152 0.0722 0 0 0.2126 0.7152 0.0722 0 0 0 0 0 1 0"/>
+      <feComponentTransfer >
+        <feFuncR type="table" tableValues="0 0 0.1 1"/>
+        <feFuncG type="table" tableValues="0 .1 0.4 1"/>
+        <feFuncB type="table" tableValues="0 .2 .4 1"/>
+      </feComponentTransfer>
+    </filter>
+
+    <filter id="ef_blueray" x="0%" y="0%" width="100%" height="100%">
+      <feColorMatrix type="matrix" in="SourceGraphic" result="B"
+        values=" -1 0 0 0 -1
+                 0 -1 0 0 -1
+                 -.1 1 -.1 0 0
+                 0 -.1 -.2 1 0" />
+    </filter>
+
+    <filter id="ef_hip">
+      <feColorMatrix type="matrix" in="SourceGraphic"
+        values=" -1 0 0 0 0
+                 0 1 0 0 0
+                 0 -1 1 0 0
+                 0 0 0 1 0" />
+    </filter>
+
+    <filter id="ef_convo">
+      <feConvolveMatrix order="3" kernelMatrix="1 -1  1 -1 -0.01 -1 1 -1 1" edgeMode="duplicate" result="convo">
+      </feConvolveMatrix>
+    </filter>
+
+    <filter id="ef_spectrum">
+      <feConvolveMatrix filterRes="100 100" style="color-interpolation-filters:sRGB" order="3" kernelMatrix="0 -1 0   -1 4 -1   0 -1 0" preserveAlpha="true" />
+    </filter>
+
+    <filter id="ef_xray">
+      <feColorMatrix type="luminanceToAlpha" values=""/>
+    </filter>
+
+    <filter id="ef_blur">
+      <feGaussianBlur stdDeviation="2" />
+    </filter>
+
+    <filter id="ef_emboss" >
+      <feColorMatrix type="luminanceToAlpha" values=""/>
+      <feDiffuseLighting diffuseConstant="1" surfaceScale="5" result="feDistantLight">
+        <feDistantLight elevation="28" azimuth="65" />
+      </feDiffuseLighting>
+    </filter>
+
+    <filter id="ef_edge">
+      <feConvolveMatrix order="3 3" preserveAlpha="true" kernelMatrix="-5 0 0 0 0 0 0 0 5"/>
+    </filter>
+
+    <filter id="ef_noir">
+      <feGaussianBlur stdDeviation="0" />
+      <feComponentTransfer>
+        <feFuncR type="discrete" tableValues="0 .5 1 1" />
+        <feFuncG type="discrete" tableValues="0 .5 1" />
+        <feFuncB type="discrete" tableValues="0" />
+      </feComponentTransfer>
+    </filter>
+
+  </defs>
+</svg>

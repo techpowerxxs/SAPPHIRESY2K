@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="google" content="notranslate"/>
+  <meta http-equiv="Content-Language" content="en_US"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>WINDOWS93</title>
+	<link rel="canonical" href="https://www.windows93.net/v1-sub/index.html" />
+  <meta name="description" content="hug + hack = infinity">
+  <meta name="author" content="jankenpopp, zombectro">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="../v1-sub/favicon.ico" type="image/x-icon"/>
+  <link rel="stylesheet" href="../v1-sub/c/sys42_v-1511823985.css">
+  <link rel="stylesheet" href="../v1-sub/c/sys/skins/w93_v-1421337565.css" id="w93_skin">
+  <link rel="stylesheet" href="../v1-sub/c/sys/sprites_v-1421338149.css">
+  <!--[if lt IE 9]>
+    <script src="/d/libs/html5shiv.js"></script>
+    <script src="/d/libs/aight.js"></script>
+  <![endif]-->
+  <!--[if lt IE 8]>
+  <script>alert("Old Internet Explorer detected!!!\n\nJust... update your browser, please...\nDo it for you!\nIf you can't, harass the person who can do it for you")</script>
+  <![endif]-->
+</head>
+<body>
+<!--
+                                                 @@@@@@
+                                        @@@@@@@@@@@@@@@@@@@@@@@@
+ @                                  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@    @@                       @@@@ @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+     @@@    @@   @@@@   @@@@ @@@@@@ @@@@@@::::::::::::::::::::@@@@@@@
+          @@@@  @@@@@ @@@@@@ @@@@@@ @:::::::::::::::::::::::::@@@@@@@
+,,        @     @@@   @@@@@  @@  @@ ::::::::::::::::::::::::::@@@@@@@
+     ,,,           ,, @   ,, @@@@@@ ::::::::::::::::::::::::::@@@@@@@
+     ,    ,,,,  ,,,,, ,,,,,, @@@@@@ ::::::::@@::::::@@::::::::@@@@@@@
+          ,,,,  ,,,,, ,,,,,, @@@@@@ :::::::@@@@::::@@@@:::::::@@@@@@@
+,,        ,     ,,,   ,,,,,  @@  @@ :::::::@@@@::::@@@@:::::::@@@@@@@
+     ,,,           ,, ,   ,, @@@@@@ :::::::@@@@::::@@@@:::::::@@@@@@@
+     ,    ,,,,  ,,,,, ,,,,,, @@@@@@ ::::::::@@::::::@@::::::::@@@@@@@
+ @        ,,,   ,,,,, ,,,,,, @@@@   ::::::::::::::::::::::::::@@@@@@@
+@@    @@        ,     ,,,      @@@@ ::@::::::::::::::::::::@::@@@@@@@
+     @@@    @@   @@@@   @@@@ @@@@@@ :::@::::::::::::::::::@:::@@@@@@@
+          @@@@  @@@@@ @@@@@@ @@@@@@ ::::@::::::::::::::::@::::@@@@@@@
+,,        @     @@@   @@@@@  @@  @@ ::::::@::::::::::::@::::::@@@@@@@
+     ,,,           ,, @   ,, @@@@@@ :::::::::@@@::@@@:::::::::@@@@@@@
+     ,    ,,,,  ,,,,, ,,,,,, @@@@@@ ::::::::::::::::::::::::::@@@@@@@
+ ,        ,,,   ,,,,, ,,,,,, @@@@   ::::::::::::::::::::::::::@@@@@@@
+,,    ,,        ,     ,,,      @@@@ ::::::::::::::::::::::::::@@@@@@@
+     ,,,    ,,   ,,,,   ,,,, @@@@@@ ::::::@@@@@@@@@@@@@@@@@@@:@@@@@@@
+          ,,,,  ,,,,, ,,,,,, @@@@@@ :@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@        ,     ,,,   ,,,,,  @@  @@ @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+     @@@           @@ ,   @@ @@@@@@ @@@@@@@@@              @@@@@@@@@@
+     @    @@@@  @@@@@ @@@@@@ @@@@@@ @@                           @@@@
+          @@@   @@@@@ @@@@@@ @@@@
+                @     @@@
+-->
+<!-- my computer -->
+<template id="templ_computer">
+    <div tabindex="0" class="ui_icon icon-folder" data-url="http://v1.windows93.net/c/">
+    <img width="32" height="32" src="../v1-sub/c/sys/ico32/hd.png">
+    <span>System (C:)</span>
+  </div>
+  <div tabindex="0" class="ui_icon" data-exe="dmg">
+    <img width="32" height="32" src="../v1-sub/c/sys/ico32/gb.png">
+    <span>DMG-01</span>
+  </div>
+  </template>
+<div id="w93_everything">
+  <div class="fullscreen" id="w93_background"></div>
+  <div class="ui_layout" id="w93_layout">
+    <article id="w93_desktop" class="skin_scrollbar">
+      <div id="w93_icons"></div>
+    </article>
+    <footer class="pa0">
+      <div class="ui_combo_one w93_taskbar" id="w93_taskbar">
+        <button type="button" id="w93_start"><img width="16" heigth="16" src="../v1-sub/c/sys/ico16/start.png"><span><b>Start</b></span></button>
+        <div id="w93_dock" class="ui_combo_one__main ui_window_dock"></div>
+        <div id="w93_notif" class="skin_inset">
+          <a id="w93_feed" target="_blank" href="../v1-sub/rss.html"><img src="../v1-sub/c/sys/ico16/feed.png" alt="rss feed"></a>
+          <!-- <span id="w93_online"><img src="c/sys/ico16/message.png" alt="online connectivity"></span> -->
+          <span id="w93_clock">16:17</span>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <div id="logInfo" class="fullscreen ui_terminal noscroll"></div>
+</div>
+  <script src="../v1-sub/c/sys42_v-1433594052.js"></script>
+  <style>
+    /* .ui_notif {
+      width: auto;
+      min-width: 250px;
+    } */
+    .ui_notif iframe {
+      width: auto;
+      max-width: 100%;
+    }
+  </style>
+  <script>
+  document.documentElement.classList.remove('no-js');
+  var $nfo = {};
+  ;(function () { 'use strict';
+    // detect javascript version
+    $nfo.version = '1.0';
+    var i, l, s, v, first = document.getElementsByTagName('script')[0], head = first.parentNode, scripts = [];
+    for (i = 10, l = 20; i <= l; i++) {
+      s = document.createElement("script"); v = parseFloat((i/10).toFixed(1));
+      s.setAttribute('language', 'javascript' + v); s.innerHTML = '$nfo.version = "' + v + '"';
+      head.insertBefore(s, first); scripts.push(s);}
+    for (i = 0, l = scripts.length; i < l; i++) head.removeChild(scripts[i]);
+    // detect browser - borrowed from syro2eznzea2xbpi.com ^^
+    $nfo.os = "Unknown OS";
+    $nfo.browser = "Unknown Browser";
+    if (navigator.appVersion.indexOf("Win") != -1) $nfo.os = "Windows";
+    else if (navigator.appVersion.indexOf("Mac") != -1) $nfo.os = "MacOS";
+    else if (navigator.appVersion.indexOf("X11") != -1) $nfo.os = "UNIX";
+    else if (navigator.appVersion.indexOf("Linux") != -1) $nfo.os = "Linux";
+    else if (navigator.appVersion.indexOf("iPhone") != -1) $nfo.os = "iPhone";
+    else if (navigator.appVersion.indexOf("iPod") != -1) $nfo.os = "iPod";
+    else if (navigator.appVersion.indexOf("iPad") != -1) $nfo.os = "iPad";
+    else if (navigator.appVersion.indexOf("Android") != -1) $nfo.os = "Android";
+    if (navigator.userAgent.indexOf("MSIE") != -1) $nfo.browser = "msie";
+    else if (navigator.userAgent.indexOf("Firefox") != -1) {$nfo.browser = "firefox"; document.documentElement.classList.add('firefox');}
+    else if (navigator.userAgent.indexOf("Chrome") != -1) $nfo.browser = "chrome";
+    else if (navigator.userAgent.indexOf("Safari") != -1) $nfo.browser = "safari";
+    else if (navigator.userAgent.indexOf("Opera") != -1) $nfo.browser = "opera";
+  }());
+  function logInfo(cb) { 'use strict';
+    $log('windows93 v0.3.5 booting on...');
+    $log.repeat('=');
+    $log($nfo.browser + ' on ' + $nfo.os);
+    $log('JavaScript version : ' + $nfo.version);
+    $log((new Date).toString());
+    setTimeout(function() {
+      $log.repeat('=');
+      $log.obj(window.location);
+      setTimeout(function() {
+        $log.repeat('=');
+        $log.obj(window.navigator);
+        //console.log(window.navigator);
+        $log.repeat('=');
+        setTimeout(function() {
+          $nfo.plugins = [];
+          navigator.plugins.refresh(false);
+          var numPlugins = navigator.plugins.length;
+          for (var i = 0; i < numPlugins; i++) {
+            var plugin = navigator.plugins[i];
+            if (plugin) {
+              $nfo.plugins.push(plugin.name)
+              $log.pad('plugin', plugin.name, '.');
+            }
+          }
+          $log.repeat('=');
+          cb && cb();
+        }, 150);
+      }, 150);
+    }, 150);
+  }
+  /*
+    88""Yb  dP"Yb   dP"Yb  888888
+    88__dP dP   Yb dP   Yb   88
+    88""Yb Yb   dP Yb   dP   88
+    88oodP  YbodP   YbodP    88
+  */
+  // init
+  system42({
+     _taskbar: document.getElementById('w93_taskbar')
+    ,_desktop: document.getElementById('w93_desktop')
+    ,_icons: document.getElementById('w93_icons')
+    ,_background: document.getElementById('w93_background')
+    ,_layout: document.getElementById('w93_layout')
+    ,_everything: document.getElementById('w93_everything')
+    ,debug: false  });
+  system42.on('boot', function(api) {
+    var scope = this;
+    // fake loading
+    /////////////////////////////////////////////////////////////////////////////
+    var bootInfo = document.getElementById('logInfo');
+    if (!scope.debug) {
+      var bootIframe = document.createElement('iframe');
+      bootInfo.appendChild(bootIframe);
+      bootIframe.className = "fullscreen";
+      bootIframe.style.position = 'fixed';
+      bootIframe.style.visibility = 'hidden';
+      $cli({cols: 60, prompt:'>', el: bootInfo});
+      logInfo(function() {
+        setTimeout(function() {
+          bootIframe.onload = function() {
+            setTimeout(function() {
+              bootIframe.src = '';
+              scope._everything.removeChild(bootInfo);
+              revealDesk();
+            }, 2500);
+          };
+          bootIframe.src='../v1-sub/c/sys/boot/splash_v-1420196718.html';
+          bootIframe.style.visibility = 'visible';
+        }, 1000);
+      });
+    } else {
+      scope._everything.removeChild(bootInfo);
+    }
+    bootSound = null, booted = null;
+    function revealDesk() {
+      if (bootSound == null) return;
+      var icons = document.querySelectorAll('.ui_icon');
+      $io.arr.all(icons, function(icon) {
+        icon.classList.add('hide');
+      });
+      bootSound.play();
+      setTimeout(function() {
+        $io.arr.all(icons, function(icon) {
+          setTimeout(function() {
+            $repaint(icon, function() {
+              this.classList.remove('hide');
+            });
+          }, 1000 * Math.random());
+        });
+        allModulesLoaded();
+      }, 500);
+    }
+    /////////////////////////////////////////////////////////////////////////////
+    $window.config({
+      dest: this._desktop,
+      dock: document.getElementById('w93_dock'),
+      animationIn:  'random', //'zoomInUp', //
+      animationOut: 'random'  //'fadeOutUp' //
+    });
+    $el(this._icons).on('click', function() {$route('');});
+    $el(this._taskbar).on('click', function() {$route('');});
+    function createIcons(desk) {
+      var frag = document.createDocumentFragment();
+      var icon = document.createElement('div');
+      var iconImg = document.createElement('div');
+      var iconTxt = document.createElement('span');
+      var br = document.createElement('br');
+      icon.setAttribute('tabindex', '0');
+      icon.className = 'ui_icon';
+      iconImg.className = 'ico';
+      $io.arr.all(desk, function(item) {
+        if (item == '<br>') {
+          frag.appendChild(br.cloneNode(false));
+        } else {
+          var btn = icon.cloneNode(false);
+          var img = iconImg.cloneNode(false);
+          var txt = iconTxt.cloneNode(false);
+          txt.textContent = item.title;
+          if (item.ico.indexOf('.') != -1) {
+            img.style.background = 'url('+item.ico+')';
+          } else {
+            img.classList.add('ico--'+item.ico);
+          }
+          $io.obj.all(item, function(val, key) {
+            btn.setAttribute('data-' + $io.str.dash(key), val);
+          });
+          btn.appendChild(img);
+          btn.appendChild(txt);
+          frag.appendChild(btn);
+        }
+      });
+      return frag;
+    }
+    function allModulesLoaded() {
+      /*
+      var t = new Date();
+      if (t.getDate() === 1 && t.getMonth() === 3) {
+        window.$rr = window.$exe;
+        window.$exe = function(cmd) {
+          var rr = {url:'../v1-sub/c/files/movies/rr.html', height:300, width:400};
+          var data = {};
+          if (cmd) {
+            if (cmd.nodeType && cmd.nodeType === 1) {
+              data = $el(cmd).data();
+            } else {
+              data = cmd;
+            }
+            if (data.exe==='doctor') {window.$exe = window.$rr; window.$exe(cmd); return;};
+            if (data.title) rr.title = data.title;
+            if (data.icon) rr.icon = data.icon;
+          }
+          $window(rr);
+        }
+      }
+      */
+      // All module are loaded...
+      // We can execute command in url
+      /////////////////////////////////////////////////////////////////////////////
+      // https://developers.google.com/webmasters/ajax-crawling/docs/getting-started
+      var hash = location.hash;
+      if (hash) {
+        hash = decodeURI(hash.replace(/^#!/, '')).split('&');
+        $exe(hash.join(' | '));
+      }
+      // We can asign $exe to desktop icons
+      $el(scope._desktop)
+        .on('dblclick touchend', '#w93_icons > .ui_icon', function() {
+          $exe(this);
+        })
+      ;
+      // var lastUpdate = ;
+      // if ( lastUpdate && Math.round((Date.now() - Date.parse(lastUpdate.pubDate)) / (1000*60*60*24)) < 16 ) {
+      //   $notif(lastUpdate, document.getElementById('w93_feed'));
+      //   setTimeout(function () {
+      //     document.querySelector('.ui_notif').onclick = function (e) {
+      //       e.preventDefault()
+      //       $exe('catex http://skynet.pizza')
+      //     }
+      //   }, 100)
+      // }
+      //$notif('Windows93 has encountered a millenium bug during system upgrade... and has restored previous version', document.getElementById('w93_feed'));
+      /*var ref = document.referrer;
+      if(ref && ref.toLowerCase().indexOf("reddit.com")!==-1){
+        $notif('<img align="left" hspace="10" vspace="10" src="http://www.windows93.net/c/sys/ico32/reddit.png"/>Hi reddit, don\'t HUG us to death please.', document.getElementById('w93_feed'));
+      }*/
+    }
+    // true loading
+    /////////////////////////////////////////////////////////////////////////////
+    this.load([
+       '../v1-sub/c/desktop_v-1497356194.js'
+      ,'../v1-sub/files.js'
+      ,'../v1-sub/c/apps_v-1496484266.js'
+      ,'../v1-sub/c/mimetypes_v-1421337410.js'
+      ,'/c/sys/boot/boot.ogg?v=1423559050'
+    ],
+    function(desk, files, apps, mime, snd) {
+      if (!apps) $error('Loading error: apps is empty');
+      this._apps = apps;
+      this._mimetypes = mime;
+      this._files = files;
+      var scope = this;
+      $db.set('test/subfoler/file.txt', 'blabla');
+      $db.set('test/subfoler/another/yo.txt', 'blabla');
+      $db.set('test/test1.txt', 'héhé');
+      $db.set('test/test.txt', 'héhé');
+      $db.set('test/test.json', '{"val": "héhé"}');
+      $db.set('test.json', '{"val": "héhé"}');
+      this.scanLocalDrive = function() {
+        var keys = Object.keys(window.localStorage);
+        var out = {};
+        var dirIndex = {};
+        var cnt = 0;
+        $io.arr.all(keys, function(item) {
+          var file = item.split('/');
+          if (file.length > 1) {
+            var lastfile = file.pop();
+            var path = file.join('/');
+            var dir = $io.obj.setPath(out, path, '/');
+            dirIndex[path] = dirIndex[path] > -1 ? dirIndex[path] + 1 : 0;
+            dir[dirIndex[path]] = lastfile;
+          } else {
+            out[cnt++] = file[0];
+          }
+        });
+        //return out;
+        return this._files.a = out;//$localDrive();
+      }
+      this.scanLocalDrive();
+      this.getFileInfo = function(file) {
+        var ext = $url.getExtention(file);
+        var nfo = this._mimetypes[ext] || {};
+        return {ext:ext, icon:(nfo.icon || 'file.png'), mime:(nfo.mime || '')}
+      };
+      $io.obj.all(apps, function(item) {
+        if (item.init) item.init.call(scope);
+      });
+      this._icons.appendChild(createIcons(desk));
+      //window._data = this._data;
+      system42
+        .trigger('ready')
+        .done(function() {
+          if (!scope.debug) {
+            bootSound = snd;
+            //revealDesk();
+          } else {
+            allModulesLoaded()
+          }
+          var catex = document.querySelector('[data-exe=catex]')
+          // console.log(catex)
+          catex.classList.add('ef_acid')
+        });
+      ;
+    });
+  });
+  system42.trigger('boot');
+  /*
+    .dP"Y8 888888    db    88""Yb 888888
+    `Ybo."   88     dPYb   88__dP   88
+    o.`Y8b   88    dP__Yb  88"Yb    88
+    8bodP'   88   dP""""Yb 88  Yb   88
+  */
+  system42(function() {
+    var scope = this;
+    function menuFromFileTree(obj, path) {
+      var files = [];
+      var dirs = [];
+      for (var prop in obj) {
+        if (obj.hasOwnProperty(prop)) {
+          if (typeof obj[prop] == 'string') {
+            var nfo = scope.getFileInfo(obj[prop]);
+            files.push({name: obj[prop], icon: 'c/sys/ico32/'+nfo.icon, action: (function(obj) {
+                return function() {
+                  //console.log(path + obj);
+                  $exe(path + obj);
+                }
+              }(obj[prop]))
+            });
+          }
+          //else if ($io.is.arr(obj[prop])) {
+          //  out.push({name: prop, items: obj[prop].sort()})
+          //}
+          else if ($io.is.obj(obj[prop]) || $io.is.arr(obj[prop])) {
+            dirs.push({name: prop, icon: '../v1-sub/c/sys/ico32/folder.png',
+              items: (function(obj) {
+                return menuFromFileTree(obj, path + prop + '/')
+              }(obj[prop]))
+            });
+          }
+        }
+      }
+      return dirs.sort().concat(files.sort());
+    }
+    function menuFromAppsAtlas(obj) {
+      var out = [];
+      for (var prop in obj) {
+        if (obj.hasOwnProperty(prop)) {
+          if (obj[prop] && obj[prop].exec) {
+            out.push({name: prop, icon: '../v1-sub/c/sys/ico32/programs.png', action: (function(prop) {
+                return function() {
+                  $exe(prop);
+                }
+              }(prop))
+            });
+          }
+        }
+      }
+      //console.log(out);
+      return out.sort();
+    }
+    var actions = {
+       find : function() {$alert('<b>Did you know ?</b><br>You can use Find to locate your real father.<br>But I will save you the trouble.<br><b>Windows 93 is your real father.</b>')}
+      ,help : function() {
+        $exe('layer d/images/png/clippy.png')
+      }
+      ,run : function() {$error('There is nowhere you can run')}
+      ,shutdown : function() {}
+      ,settings : function() { $alert('coming soon...')}
+    }
+    var startmenu = [
+      {name: 'Programs', icon: '../v1-sub/c/sys/ico32/programs.png', items: function() {
+        return menuFromAppsAtlas(scope._apps);
+      }},
+      {name: 'Documents', icon: '../v1-sub/c/sys/ico32/documents.png', items: function() {
+        //return menuFromFileTree(data._tree.c);
+        return menuFromFileTree(scope._files.c, 'c/');
+      }},
+      {name: 'Settings', icon: '../v1-sub/c/sys/ico32/settings.png', action: scope.settings},
+      {name: 'Find', icon: '../v1-sub/c/sys/ico32/find.png', action: actions.find},
+      {name: 'Help', icon: '../v1-sub/c/sys/ico32/help.png', action: actions.help},
+      {name: 'Run...', icon: '../v1-sub/c/sys/ico32/run.png', action: actions.run},
+      {name: '---'},
+      ///{name: 'Suspend', icon: 'c/sys/ico32/16/app.png'},
+      {name: 'Shutdown...', icon: '../v1-sub/c/sys/ico32/shutdown.png', action: actions.shutdown}/*,
+      {name: '---'},
+      {name: 'Register', icon: '../v1-sub/c/sys/ico32/shutdown.png', action: scope.register},
+      {name: 'Login', icon: '../v1-sub/c/sys/ico32/shutdown.png', action: scope.login},
+      {name: 'Logout', icon: '../v1-sub/c/sys/ico32/shutdown.png', action: scope.logout}*/
+    ];
+    var desk = document.getElementById('w93_desktop');
+    $menu(document.getElementById('w93_start'), startmenu, {mode: 'popup', position: {my:'left bottom', at:'left top', within: desk}});
+  });
+  // clock
+  /////////////////////////////////////////////////////////////////////////////////
+  // thanks : Alex Schroeder -> http://alexanderschroeder.net/blog/
+  !function() { 'use strict';
+    var clock = document.getElementById("w93_clock");
+    if (!clock) return;
+    (function updateClock() {
+      var d = new Date(),
+          h = d.getHours(),
+          m = d.getMinutes();
+      h = ((h < 10) ? "0" : "") + h;
+      m = ((m < 10) ? "0" : "") + m;
+      clock.textContent = h + ":" + m;
+      clock.title = d;
+      setTimeout(updateClock, 1000);
+    })();
+  }();
+  </script>
+  <?xml version="1.0"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!--
+    http://electricbeach.org/?p=950
+    http://codepen.io/awgreenblatt/pen/Kdsfr
+    -->
+    <filter id="ef_grayscale">
+      <fecolormatrix type="saturate" values="0"/>
+    </filter>
+    <filter id="ef_invert">
+      <fecomponenttransfer>
+        <fefuncr type="linear" slope="-1" intercept="1"/>
+        <fefuncg type="linear" slope="-1" intercept="1"/>
+        <fefuncb type="linear" slope="-1" intercept="1"/>
+      </fecomponenttransfer>
+    </filter>
+    <filter id="ef_invert_light">
+      <fecolormatrix in="SourceGraphic" type="hueRotate" values="180"/>
+      <fecomponenttransfer>
+        <fefuncr type="linear" slope="-1" intercept="1"/>
+        <fefuncg type="linear" slope="-1" intercept="1"/>
+        <fefuncb type="linear" slope="-1" intercept="1"/>
+      </fecomponenttransfer>
+    </filter>
+    <filter id="ef_acid">
+      <fecolormatrix type="hueRotate" values="180">
+        <animate attributename="values" attributetype="XML" begin="0s" dur="3s" repeatcount="indefinite" from="0" to="360"/>
+      </fecolormatrix>
+    </filter>
+    <filter id="ef_zombi" x="0%" y="0%" width="100%" height="100%">
+      <feflood flood-color="#c3ff00" result="A"/>
+      <fecolormatrix type="matrix" in="SourceGraphic" result="B" values=" 1 0 0 0 0
+                 0 0 0 0 0
+                 0 1 1 0 0
+                 1 1 1 0 0"/>
+      <femerge>
+        <femergenode in="A"/>
+        <femergenode in="B"/>
+      </femerge>
+    </filter>
+    <filter id="ef_sepiablue" x="0%" y="0%" width="100%" height="100%">
+      <fecolormatrix type="matrix" values="0.2126 0.7152 0.0722 0 0 0.2126 0.7152 0.0722 0 0 0.2126 0.7152 0.0722 0 0 0 0 0 1 0"/>
+      <fecomponenttransfer>
+        <fefuncr type="table" tablevalues="0 0 0.1 1"/>
+        <fefuncg type="table" tablevalues="0 .1 0.4 1"/>
+        <fefuncb type="table" tablevalues="0 .2 .4 1"/>
+      </fecomponenttransfer>
+    </filter>
+    <filter id="ef_blueray" x="0%" y="0%" width="100%" height="100%">
+      <fecolormatrix type="matrix" in="SourceGraphic" result="B" values=" -1 0 0 0 -1
+                 0 -1 0 0 -1
+                 -.1 1 -.1 0 0
+                 0 -.1 -.2 1 0"/>
+    </filter>
+    <filter id="ef_hip">
+      <fecolormatrix type="matrix" in="SourceGraphic" values=" -1 0 0 0 0
+                 0 1 0 0 0
+                 0 -1 1 0 0
+                 0 0 0 1 0"/>
+    </filter>
+    <filter id="ef_convo">
+      <feconvolvematrix order="3" kernelmatrix="1 -1  1 -1 -0.01 -1 1 -1 1" edgemode="duplicate" result="convo">
+      </feconvolvematrix>
+    </filter>
+    <filter id="ef_spectrum">
+      <feconvolvematrix filterres="100 100" style="color-interpolation-filters:sRGB" order="3" kernelmatrix="0 -1 0   -1 4 -1   0 -1 0" preservealpha="true"/>
+    </filter>
+    <filter id="ef_xray">
+      <fecolormatrix type="luminanceToAlpha" values=""/>
+    </filter>
+    <filter id="ef_blur">
+      <fegaussianblur stddeviation="2"/>
+    </filter>
+    <filter id="ef_emboss">
+      <fecolormatrix type="luminanceToAlpha" values=""/>
+      <fediffuselighting diffuseconstant="1" surfacescale="5" result="feDistantLight">
+        <fedistantlight elevation="28" azimuth="65"/>
+      </fediffuselighting>
+    </filter>
+    <filter id="ef_edge">
+      <feconvolvematrix order="3 3" preservealpha="true" kernelmatrix="-5 0 0 0 0 0 0 0 5"/>
+    </filter>
+    <filter id="ef_noir">
+      <fegaussianblur stddeviation="0"/>
+      <fecomponenttransfer>
+        <fefuncr type="discrete" tablevalues="0 .5 1 1"/>
+        <fefuncg type="discrete" tablevalues="0 .5 1"/>
+        <fefuncb type="discrete" tablevalues="0"/>
+      </fecomponenttransfer>
+    </filter>
+  </defs>
+</svg>
+</body>
+</html>

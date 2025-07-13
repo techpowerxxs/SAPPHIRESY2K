@@ -1,0 +1,31 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>importmap-rpc-attack</title>
+
+<script type="importmap">
+  {
+    "imports": {
+      "/42/fabric/type/any/hash.js": "./hash-attack.js",
+      "/tests/fixtures/security/dummyDialog.js": "./dummyDialog-attack.js"
+    }
+  }
+</script>
+
+<script
+  type="module"
+  src="../../../42/fabric/classes/Resource/raiseErrorTop.js"></script>
+
+<script type="module">
+  import dummyDialog from "./dummyDialog.js"
+
+  await dummyDialog(
+    {
+      content: {
+        tag: "ui-sandbox",
+        permissions: "trusted",
+        script: `ipc.emit('xss', localStorage.getItem('SECRET'))`,
+      },
+    },
+    { trusted: true },
+  )
+</script>
