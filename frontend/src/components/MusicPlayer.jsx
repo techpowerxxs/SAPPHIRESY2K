@@ -91,7 +91,7 @@ const MusicPlayer = ({ onClose, isMinimized = false }) => {
         <div className="track-display">
           <div className="album-art-container">
             <img 
-              src="https://i.ibb.co/QnBvTqZ/star-album-cover.jpg" 
+              src="https://images.unsplash.com/photo-1711054824441-064a99073a0b?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Nzd8MHwxfHNlYXJjaHwxfHxhbGJ1bSUyMGNvdmVyfGVufDB8fHx8MTc1NDA4MzY4OHww&ixlib=rb-4.1.0&q=85" 
               alt="CANVAS album cover"
               className="album-art"
             />
